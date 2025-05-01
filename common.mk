@@ -197,6 +197,15 @@ PRODUCT_COPY_FILES += \
 # Kernel
 PRODUCT_ENABLE_UFFD_GC := true
 
+# Lineage Health
+PRODUCT_PACKAGES += \
+    vendor.lineage.health-service.default
+
+$(call soong_config_set,lineage_health,charging_control_limit_start_path,/sys/module/qpnp_adaptive_charge/parameters/lower_limit)
+$(call soong_config_set,lineage_health,charging_control_limit_stop_path,/sys/module/qpnp_adaptive_charge/parameters/upper_limit)
+$(call soong_config_set,lineage_health,charging_control_supports_limit,true)
+$(call soong_config_set,lineage_health,charging_control_supports_toggle,false)
+
 # LiveDisplay
 PRODUCT_PACKAGES += \
     vendor.lineage.livedisplay-service.sdm \

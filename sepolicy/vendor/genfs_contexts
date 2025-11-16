@@ -1,2 +1,0 @@
-# Health
-genfscon sysfs /module/qpnp_adaptive_charge/parameters                          u:object_r:vendor_sysfs_battery_supply:s0

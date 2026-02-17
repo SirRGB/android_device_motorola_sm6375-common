@@ -48,8 +48,8 @@ blob_fixups: blob_fixups_user_type = {
         .regex_replace('/system/', '/system_ext/'),
     'system_ext/lib64/libwfdnative.so': blob_fixup()
         .add_needed('libinput_shim.so'),
-    'system_ext/priv-app/ims/ims.apk': blob_fixup()
-        .apktool_patch('ims-patches'),
+#    'system_ext/priv-app/ims/ims.apk': blob_fixup()
+#        .apktool_patch('ims-patches'),
     (
         'vendor/lib64/libdpps.so',
         'vendor/lib64/libsnapdragoncolor-manager.so',
@@ -69,9 +69,9 @@ module = ExtractUtilsModule(
     namespace_imports=namespace_imports,
 )
 
-module.add_proprietary_file('proprietary-files-fm.txt').add_copy_files_guard(
-    'TARGET_HAS_FM', 'true'
-)
+#module.add_proprietary_file('proprietary-files-fm.txt').add_copy_files_guard(
+#    'TARGET_HAS_FM', 'true'
+#)
 
 if __name__ == '__main__':
     utils = ExtractUtils.device(module)
